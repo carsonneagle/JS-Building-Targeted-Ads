@@ -1,5 +1,3 @@
-// get user's data
-// get user's coordinates
 // Get the user's coordinates:                                                              
 async function getCoords(){
     pos = await new Promise((resolve, reject) => {
@@ -7,13 +5,7 @@ async function getCoords(){
     })
     return [pos.coords.latitude, pos.coords.longitude]
 }
-
-
-
-// get user's time
-
-
-// Get the user's time:                                                              
+                                                            
 // Get the user's time:                                                              
 function userTime(){
     const now = new Date()
@@ -26,14 +18,7 @@ function getMealTime(){
     return tod > 20 ? 'latenight snack' : tod > 16 ? 'dinner' : tod > 11 ? 'lunch' : 'breakfast'
 }
 
-// helper functions
-// check time of day
-
-
-// build ads
 // build ad 1
-
-
 function buildAd1(){
     const mealTime = getMealTime()
     let content = document.querySelector('.ad1')
@@ -42,8 +27,6 @@ function buildAd1(){
     content.append(inner)
 }
 
-
-// build ad 2
 // Build Ad 2                                                             
 function buildAd2(coordinates){
     const coords = coordinates
@@ -54,12 +37,7 @@ function buildAd2(coordinates){
     content.append(inner)
 }
 
-
-
-
-// event listeners
 // on load, build ads
-
 window.onload = async () => {
     buildAd1()
     const coords = await getCoords()
